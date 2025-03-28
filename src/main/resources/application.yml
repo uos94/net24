@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: kFrame
+  profiles:
+    group:
+      dev: dev
+      test: test
+
+#blue,cyan,faint,green,magenta,red,yello
+logging:
+  pattern:
+    console: "%clr(%5p){} %clr(%d{HH:mm:ss}){faint} %clr([%15.15t]){magenta} %clr(%-40.40logger{39}){cyan} %clr(%3L){red} %m%n"
+
+
+server:
+  port: 8080
+
+connect:
+  addr: 211.236.174.10
+  port: 5053
+  timeout: 5000
+
+---
+spring.config.activate.on-profile: dev
+
+---
+spring.config.activate.on-profile: test
