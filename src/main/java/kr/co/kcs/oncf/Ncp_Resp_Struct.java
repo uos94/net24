@@ -2,7 +2,7 @@
 package kr.co.kcs.oncf;
 
 import java.io.Serializable;
-import com.aci.oncf.ncp_resp_struct.Resp_Data_SMarker;
+import kr.co.kcs.oncf.ncp_resp_struct.Resp_Data_SMarker;
 import com.hpe.nonstop.ddl2bean.commons.annotations.DdlField;
 import com.hpe.nonstop.ddl2bean.commons.annotations.DdlGroup;
 import com.hpe.nonstop.ddl2bean.commons.annotations.ReturnType;

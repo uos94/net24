@@ -1,5 +1,5 @@
 
-package com.aci.oncf.ncp_line;
+package kr.co.kcs.oncf.ncp_line;
 
 import java.io.Serializable;
 import com.hpe.nonstop.ddl2bean.commons.annotations.DdlField;
@@ -10,15 +10,15 @@ public class Interface
     implements Serializable, InterfaceMarker
 {
 
-    private short interface;
+    private short interfaces;
 
     @DdlField(Version = "2.0", QualName = "interface", ObjectClass = 1, Level = 1, Structure = 2, Offset = 134, ElementSize = 2, IdentifierElement = 72)
     public short getInterface() {
-        return interface;
+        return interfaces;
     }
 
     public void setInterface(short interfaceParam) {
-        this.interface = interfaceParam;
+        this.interfaces = interfaceParam;
     }
 
 }

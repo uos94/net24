@@ -2,9 +2,9 @@
 package kr.co.kcs.oncf;
 
 import java.io.Serializable;
-import com.aci.oncf.ncp_lex_struct_static.End_User_Id;
-import com.aci.oncf.ncp_lex_struct_static.Fillrr1Marker;
-import com.aci.oncf.ncp_lex_struct_static.RnMarker;
+import kr.co.kcs.oncf.ncp_lex_struct_static.End_User_Id;
+import kr.co.kcs.oncf.ncp_lex_struct_static.Fillrr1Marker;
+import kr.co.kcs.oncf.ncp_lex_struct_static.RnMarker;
 import com.hpe.nonstop.ddl2bean.commons.annotations.DdlField;
 import com.hpe.nonstop.ddl2bean.commons.annotations.DdlGroup;
 import com.hpe.nonstop.ddl2bean.commons.annotations.ReturnType;
@@ -20,7 +20,7 @@ public class Ncp_Lex_Struct_Static
     private short cmd;
     private short obj_Typ;
     private String obj;
-	    private RnMarker rn;
+    private RnMarker rn;
     private End_User_Id end_User_Id;
 //    private String rn;
 //   private String user;
