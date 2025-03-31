@@ -2,7 +2,7 @@
 package kr.co.kcs.oncf;
 
 import java.io.Serializable;
-
+import com.aci.oncf.ncp_lex_struct.Dynamic_Var1;
 import com.hpe.nonstop.ddl2bean.commons.annotations.DdlField;
 import com.hpe.nonstop.ddl2bean.commons.annotations.DdlGroup;
 
@@ -11,17 +11,18 @@ public class Ncp_Lex_Struct
     implements Serializable
 {
 
-    private Ncp_Lex_Struct_Static statics;
+    private Ncp_Lex_Struct_Static static;
     private short dynamic_Area_Lgth;
-    private Var_Token dynamic_Var1;
+//    private Var_Token dynamic_Var1;
+    private Dynamic_Var1 dynamic_Var1;
 
     @DdlField(Version = "2.0", QualName = "static", ObjectClass = 0, Level = 1, Structure = 0, Offset = 0, ElementSize = 210, IdentifierElement = 1)
     public Ncp_Lex_Struct_Static getStatic() {
-        return statics;
+        return static;
     }
 
     public void setStatic(Ncp_Lex_Struct_Static staticParam) {
-        this.statics = staticParam;
+        this.static = staticParam;
     }
 
     @DdlField(Version = "2.0", QualName = "dynamic-area-lgth", ObjectClass = 1, Level = 1, Structure = 2, Offset = 210, ElementSize = 2, IdentifierElement = 35)
@@ -34,11 +35,12 @@ public class Ncp_Lex_Struct
     }
 
     @DdlField(Version = "2.0", QualName = "dynamic-var1", ObjectClass = 0, Level = 1, Structure = 0, Offset = 212, ElementSize = 3800, IdentifierElement = 36)
-    public Var_Token getDynamic_Var1() {
+    public Dynamic_Var1 getDynamic_Var1() {
+//    public Var_Token getDynamic_Var1() {
         return dynamic_Var1;
     }
-
-    public void setDynamic_Var1(Var_Token dynamic_Var1Param) {
+    public void setDynamic_Var1(Dynamic_Var1 dynamic_Var1Param) {
+    //public void setDynamic_Var1(Var_Token dynamic_Var1Param) {
         this.dynamic_Var1 = dynamic_Var1Param;
     }
 

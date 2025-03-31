@@ -19,9 +19,8 @@ public class DamoSvc {
 		
 		/* structStatic */
 		short lgth					= 214;
-		short cmd					= Constants.ncp_cmd_info;	//	ncp_cmd_start , ncp_cmd_stop , ncp_cmd_info, ncp_cmd_status
+		short cmd					= Constants.ncp_cmd_start;	//	ncp_cmd_start , ncp_cmd_stop , ncp_cmd_info, ncp_cmd_status
 		short obj_Typ				= 2;
-		
 		String obj					= "P1A^ZTC0^TEST";
 		String rn					= "P1A^NODE";
 		String user					= "DEFAULT";

@@ -2,9 +2,10 @@
 package kr.co.kcs.oncf;
 
 import java.io.Serializable;
-
+import com.aci.oncf.var_token.Var_Data_SMarker;
 import com.hpe.nonstop.ddl2bean.commons.annotations.DdlField;
 import com.hpe.nonstop.ddl2bean.commons.annotations.DdlGroup;
+import com.hpe.nonstop.ddl2bean.commons.annotations.ReturnType;
 
 @DdlGroup(Version = "2.0", QualName = "var-token", ElementSize = 3800, LocalName = "var-token")
 public class Var_Token
@@ -14,7 +15,8 @@ public class Var_Token
     private short var_Ttl_Lgth;
     private short var_Typ;
     private short var_Data_Lgth;
-    private Ncp_Resp_Struct var_Data_S;
+	    private Var_Data_SMarker var_Data_S;
+//    private Ncp_Resp_Struct var_Data_S;
 
     @DdlField(Version = "2.0", QualName = "var-ttl-lgth", ObjectClass = 1, Level = 1, Structure = 2, Offset = 0, ElementSize = 2, IdentifierElement = 1)
     public short getVar_Ttl_Lgth() {
@@ -42,7 +44,20 @@ public class Var_Token
     public void setVar_Data_Lgth(short var_Data_LgthParam) {
         this.var_Data_Lgth = var_Data_LgthParam;
     }
+	
+	
+	@DdlField(Version = "2.0", QualName = "var-data-s", ObjectClass = 1, Level = 1, Structure = 0, Offset = 6, ElementSize = 3794, IdentifierElement = 4, ValidationPattern = "\\p{Sc}{0,3794}")
+    @ReturnType("com.aci.oncf.var_token.Var_Data_S")
+    public Var_Data_SMarker getVar_Data_S() {
+        return var_Data_S;
+    }
 
+    public void setVar_Data_S(Var_Data_SMarker var_Data_SParam) {
+        this.var_Data_S = var_Data_SParam;
+    }
+	
+	
+/*
     @DdlField(Version = "2.0", QualName = "var-data-s", ObjectClass = 1, Level = 1, Structure = 0, Offset = 6, ElementSize = 3794, IdentifierElement = 4, ValidationPattern = "\\p{Sc}{0,3794}")
     public Ncp_Resp_Struct getVar_Data_S() {
         return var_Data_S;
@@ -51,5 +66,5 @@ public class Var_Token
     public void setVar_Data_S(Ncp_Resp_Struct var_Data_SParam) {
         this.var_Data_S = var_Data_SParam;
     }
-
+*/
 }

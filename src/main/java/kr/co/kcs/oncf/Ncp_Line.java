@@ -3,9 +3,9 @@ package kr.co.kcs.oncf;
 
 import java.io.Serializable;
 
-import com.hpe.nonstop.ddl2bean.commons.annotations.DdlField;
-import com.hpe.nonstop.ddl2bean.commons.annotations.DdlGroup;
-import com.hpe.nonstop.ddl2bean.commons.annotations.ReturnType;
+//import com.hpe.nonstop.ddl2bean.commons.annotations.DdlField;
+//import com.hpe.nonstop.ddl2bean.commons.annotations.DdlGroup;
+//import com.hpe.nonstop.ddl2bean.commons.annotations.ReturnType;
 
 import kr.co.kcs.oncf.ncp_line.A_TimerMarker;
 import kr.co.kcs.oncf.ncp_line.B_TimerMarker;
@@ -50,6 +50,9 @@ import kr.co.kcs.oncf.ncp_line.Timer_DisMarker;
 import kr.co.kcs.oncf.ncp_line.Timer_IntervalMarker;
 import kr.co.kcs.oncf.ncp_line.Verify_Dte_AddrMarker;
 import kr.co.kcs.oncf.ncp_line.Wait_For_CallMarker;
+import com.hpe.nonstop.ddl2bean.commons.annotations.DdlField;
+import com.hpe.nonstop.ddl2bean.commons.annotations.DdlGroup;
+import com.hpe.nonstop.ddl2bean.commons.annotations.ReturnType;
 
 @DdlGroup(Version = "2.0", QualName = "ncp-line", ElementSize = 430, LocalName = "ncp-line")
 public class Ncp_Line
@@ -82,7 +85,7 @@ public class Ncp_Line
     private DuplexMarker duplex;
     private Enq_DelayMarker enq_Delay;
     private Give_TknsMarker give_Tkns;
-    private InterfaceMarker interfaces;
+    private InterfaceMarker interface;
     private Io_BiasMarker io_Bias;
     private Lin_ModeMarker lin_Mode;
     private Lin_PrimaryMarker lin_Primary;
@@ -385,11 +388,11 @@ public class Ncp_Line
     @DdlField(Version = "2.0", QualName = "interface", ObjectClass = 1, Level = 1, Structure = 2, Offset = 134, ElementSize = 2, IdentifierElement = 72)
     @ReturnType("kr.co.kcs.oncf.ncp_line.Interface")
     public InterfaceMarker getInterface() {
-        return interfaces;
+        return interface;
     }
 
     public void setInterface(InterfaceMarker interfaceParam) {
-        this.interfaces = interfaceParam;
+        this.interface = interfaceParam;
     }
 
     @DdlField(Version = "2.0", QualName = "io-bias", ObjectClass = 1, Level = 1, Structure = 2, Offset = 136, ElementSize = 2, IdentifierElement = 74)

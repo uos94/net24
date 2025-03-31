@@ -2,12 +2,14 @@
 package kr.co.kcs.oncf;
 
 import java.io.Serializable;
-
+import com.aci.oncf.ncp_lex_struct_static.End_User_Id;
+import com.aci.oncf.ncp_lex_struct_static.Fillrr1Marker;
+import com.aci.oncf.ncp_lex_struct_static.RnMarker;
 import com.hpe.nonstop.ddl2bean.commons.annotations.DdlField;
 import com.hpe.nonstop.ddl2bean.commons.annotations.DdlGroup;
 import com.hpe.nonstop.ddl2bean.commons.annotations.ReturnType;
 
-import kr.co.kcs.oncf.ncp_lex_struct_static.Fillrr1Marker;
+//import kr.co.kcs.oncf.ncp_lex_struct_static.Fillrr1Marker;
 
 @DdlGroup(Version = "2.0", QualName = "ncp-lex-struct-static", ElementSize = 210, LocalName = "ncp-lex-struct-static")
 public class Ncp_Lex_Struct_Static
@@ -18,9 +20,11 @@ public class Ncp_Lex_Struct_Static
     private short cmd;
     private short obj_Typ;
     private String obj;
-    private String rn;
-    private String user;
-    private String sess_Id;
+	    private RnMarker rn;
+    private End_User_Id end_User_Id;
+//    private String rn;
+//   private String user;
+//    private String sess_Id;
     private String user_Info;
     private int cmd_Timout;
     private String tstamp;
@@ -77,31 +81,41 @@ public class Ncp_Lex_Struct_Static
     }
 
     @DdlField(Version = "2.0", QualName = "rn", ObjectClass = 1, Level = 1, Structure = 0, Offset = 22, ElementSize = 16, IdentifierElement = 5)
-    public String getRn() {
+    @ReturnType("com.aci.oncf.ncp_lex_struct_static.Rn")
+    public RnMarker getRn() {
+    //public String getRn() {
         return rn;
     }
-
-    public void setRn(String rnParam) {
+    public void setRn(RnMarker rnParam) {
+    //public void setRn(String rnParam) {
         this.rn = rnParam;
     }
-
-    @DdlField(Version = "2.0", QualName = "user", ObjectClass = 1, Level = 2, Structure = 0, Offset = 38, ElementSize = 16, IdentifierElement = 8)
-    public String getUser() {
-        return user;
+    @DdlField(Version = "2.0", QualName = "end-user-id", ObjectClass = 0, Level = 1, Structure = 0, Offset = 38, ElementSize = 32, IdentifierElement = 7)
+    public End_User_Id getEnd_User_Id() {
+        return end_User_Id;
     }
 
-    public void setUser(String userParam) {
-        this.user = userParam;
+    public void setEnd_User_Id(End_User_Id end_User_IdParam) {
+        this.end_User_Id = end_User_IdParam;
     }
+	
+//    @DdlField(Version = "2.0", QualName = "user", ObjectClass = 1, Level = 2, Structure = 0, Offset = 38, ElementSize = 16, IdentifierElement = 8)
+//    public String getUser() {
+//        return user;
+//    }
 
-    @DdlField(Version = "2.0", QualName = "sess-id", ObjectClass = 1, Level = 2, Structure = 0, Offset = 54, ElementSize = 16, IdentifierElement = 9)
-    public String getSess_Id() {
-        return sess_Id;
-    }
+//    public void setUser(String userParam) {
+//        this.user = userParam;
+//    }
 
-    public void setSess_Id(String sess_IdParam) {
-        this.sess_Id = sess_IdParam;
-    }
+//    @DdlField(Version = "2.0", QualName = "sess-id", ObjectClass = 1, Level = 2, Structure = 0, Offset = 54, ElementSize = 16, IdentifierElement = 9)
+//    public String getSess_Id() {
+//        return sess_Id;
+//    }
+
+//    public void setSess_Id(String sess_IdParam) {
+//        this.sess_Id = sess_IdParam;
+//    }
 
     @DdlField(Version = "2.0", QualName = "user-info", ObjectClass = 1, Level = 1, Structure = 0, Offset = 70, ElementSize = 16, IdentifierElement = 10)
     public String getUser_Info() {

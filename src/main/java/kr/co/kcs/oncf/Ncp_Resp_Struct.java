@@ -2,9 +2,10 @@
 package kr.co.kcs.oncf;
 
 import java.io.Serializable;
-
+import com.aci.oncf.ncp_resp_struct.Resp_Data_SMarker;
 import com.hpe.nonstop.ddl2bean.commons.annotations.DdlField;
 import com.hpe.nonstop.ddl2bean.commons.annotations.DdlGroup;
+import com.hpe.nonstop.ddl2bean.commons.annotations.ReturnType;
 
 @DdlGroup(Version = "2.0", QualName = "ncp-resp-struct", ElementSize = 3790, LocalName = "ncp-resp-struct")
 public class Ncp_Resp_Struct
@@ -19,7 +20,8 @@ public class Ncp_Resp_Struct
     private short resp_Data_Typ;
     private String tandem_Node;
     private String fillrr1;
-    private Ncp_Resp_Info_Pro resp_Data_S;
+	    private Resp_Data_SMarker resp_Data_S;
+//    private Ncp_Resp_Info_Pro resp_Data_S;
 
     @DdlField(Version = "2.0", QualName = "resp-code", ObjectClass = 1, Level = 1, Structure = 2, Offset = 0, ElementSize = 2, IdentifierElement = 1)
     public short getResp_Code() {
@@ -92,7 +94,20 @@ public class Ncp_Resp_Struct
     public void setFillrr1(String fillrr1Param) {
         this.fillrr1 = fillrr1Param;
     }
+	
+	
+    @DdlField(Version = "2.0", QualName = "resp-data-s", ObjectClass = 1, Level = 1, Structure = 0, Offset = 72, ElementSize = 3718, IdentifierElement = 9, ValidationPattern = "\\p{Sc}{0,3718}")
+    @ReturnType("com.aci.oncf.ncp_resp_struct.Resp_Data_S")
+    public Resp_Data_SMarker getResp_Data_S() {
+        return resp_Data_S;
+    }
 
+    public void setResp_Data_S(Resp_Data_SMarker resp_Data_SParam) {
+        this.resp_Data_S = resp_Data_SParam;
+    }
+	
+	
+/*
     @DdlField(Version = "2.0", QualName = "resp-data-s", ObjectClass = 1, Level = 1, Structure = 0, Offset = 72, ElementSize = 3718, IdentifierElement = 9, ValidationPattern = "\\p{Sc}{0,3718}")
 //    @ReturnType("kr.co.kcs.oncf.ncp_resp_struct.Resp_Data_S")
     // Ncp_Resp_Info_Pro , Ncp_Resp_Status_Pro
@@ -103,5 +118,5 @@ public class Ncp_Resp_Struct
     public void setResp_Data_S(Ncp_Resp_Info_Pro resp_Data_SParam) {
         this.resp_Data_S = resp_Data_SParam;
     }
-
+*/
 }
