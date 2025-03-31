@@ -19,7 +19,7 @@ public class Ncp_Resp_Struct
     private short resp_Data_Typ;
     private String tandem_Node;
     private String fillrr1;
-    private Object resp_Data_S;
+    private Ncp_Resp_Info_Pro resp_Data_S;
 
     @DdlField(Version = "2.0", QualName = "resp-code", ObjectClass = 1, Level = 1, Structure = 2, Offset = 0, ElementSize = 2, IdentifierElement = 1)
     public short getResp_Code() {
@@ -96,11 +96,11 @@ public class Ncp_Resp_Struct
     @DdlField(Version = "2.0", QualName = "resp-data-s", ObjectClass = 1, Level = 1, Structure = 0, Offset = 72, ElementSize = 3718, IdentifierElement = 9, ValidationPattern = "\\p{Sc}{0,3718}")
 //    @ReturnType("kr.co.kcs.oncf.ncp_resp_struct.Resp_Data_S")
     // Ncp_Resp_Info_Pro , Ncp_Resp_Status_Pro
-    public Object getResp_Data_S() {
+    public Ncp_Resp_Info_Pro getResp_Data_S() {
         return resp_Data_S;
     }
 
-    public void setResp_Data_S(Object resp_Data_SParam) {
+    public void setResp_Data_S(Ncp_Resp_Info_Pro resp_Data_SParam) {
         this.resp_Data_S = resp_Data_SParam;
     }
 

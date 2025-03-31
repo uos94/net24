@@ -10,24 +10,25 @@ import kr.co.kcs.oncf.cmn.Constants;
 
 @Service
 public class DamoSvc {
-
+	
 	public Ncp_Lex_Struct lexStruct() {
 
 		Ncp_Lex_Struct struct			= new Ncp_Lex_Struct();
 		Ncp_Lex_Struct_Static sstatic	= new Ncp_Lex_Struct_Static();
 		Var_Token varToken				= new Var_Token();
-
+		
 		/* structStatic */
 		short lgth					= 214;
-		short cmd					= Constants.ncp_cmd_status;	//	ncp_cmd_start , ncp_cmd_stop , ncp_cmd_info, ncp_cmd_status
+		short cmd					= Constants.ncp_cmd_info;	//	ncp_cmd_start , ncp_cmd_stop , ncp_cmd_info, ncp_cmd_status
 		short obj_Typ				= 2;
+		
 		String obj					= "P1A^ZTC0^TEST";
 		String rn					= "P1A^NODE";
 		String user					= "DEFAULT";
 		String sess_Id				= "";
 		String user_Info			= "";
 		int cmd_Timout				= 18000;
-		String tstamp				= SUtils.getDate();
+		String tstamp				= SUtils.getDate(); 
 		short max_Resps				= 1;
 		String rqst_Vsn				= Constants.ncp_val_curr_vsn;
 		String ctx_Info				= "";
