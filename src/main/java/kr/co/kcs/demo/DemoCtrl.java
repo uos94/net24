@@ -1,6 +1,9 @@
 package kr.co.kcs.demo;
 
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.event.Level;
@@ -13,6 +16,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import kr.co.kcs.core.utils.Day;
 import kr.co.kcs.core.utils.NsjiSender;
+import kr.co.kcs.core.utils.paser.DataArrayMaker;
+import kr.co.kcs.core.utils.paser.ParamInfo;
+import kr.co.kcs.core.utils.paser.VariableProperties;
+import kr.co.kcs.core.utils.paser.Xml2Map;
 import kr.co.kcs.oncf.cmn.NcpVty;
 
 @Controller
@@ -30,6 +37,13 @@ public class DemoCtrl {
 	@GetMapping("/gogo.do")
 	public String gogo(HttpServletRequest req ,HttpServletResponse res, ModelMap modelMap) {
 
+		
+		ArrayList<ParamInfo> list = Xml2Map.getInstance().getArrayList("ncp-req-add-dev");
+		for (ParamInfo info : list) {
+		    // info 객체에 대해 작업 수행
+		    //System.out.println("Param name: " + info.name);
+		}
+		
 		modelMap.addAttribute("data", sender.sender(svc.lexStruct()));
 
 		log.info("################### {}",Level.DEBUG.name());

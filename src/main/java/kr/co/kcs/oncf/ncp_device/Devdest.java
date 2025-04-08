@@ -2,6 +2,8 @@
 package kr.co.kcs.oncf.ncp_device;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+
 import kr.co.kcs.oncf.ncp_device.devdest.Item;
 import com.hpe.nonstop.ddl2bean.commons.annotations.DdlField;
 import com.hpe.nonstop.ddl2bean.commons.annotations.DdlGroup;
@@ -13,7 +15,7 @@ public class Devdest
 
     private short count_Var1;
     private Item[] item = new Item[ 32 ] ;
-
+	
     @DdlField(Version = "2.0", QualName = "count-var1", ObjectClass = 1, Level = 2, Structure = 2, Offset = 254, ElementSize = 2, IdentifierElement = 34)
     public short getCount_Var1() {
         return count_Var1;

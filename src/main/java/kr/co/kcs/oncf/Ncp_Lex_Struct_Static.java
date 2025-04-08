@@ -14,26 +14,26 @@ public class Ncp_Lex_Struct_Static
     implements Serializable
 {
 
-    private short lgth;
-    private short cmd;
-    private short obj_Typ;
-    private String obj;
-    private String rn;
-    private String user;
-    private String sess_Id;
-    private String user_Info;
-    private int cmd_Timout;
-    private String tstamp;
-    private short max_Resps;
-    private String rqst_Vsn;
-    private String ctx_Info;
-    private short resp_Typ;
-    private short rqst_Cntl;
-    private String tandem_Node;
+    private short lgth;			//offset : 0  element_size : 2   bit_length : 16
+    private short cmd;			//offset : 2  element_size : 2   bit_length : 16
+    private short obj_Typ;		//offset : 4  element_size : 2   bit_length : 16
+    private String obj;			//offset : 6  element_size : 16  bit_length : 128
+    private String rn;			//offset : 22 element_size : 16  bit_length : 128
+    private String user;		
+    private String sess_Id;		
+    private String user_Info;	
+    private int cmd_Timout;		
+    private String tstamp;		
+    private short max_Resps;	
+    private String rqst_Vsn;	
+    private String ctx_Info;	
+    private short resp_Typ;		
+    private short rqst_Cntl;	
+    private String tandem_Node;	
     private short request_Depth;
-    private String config_Lock;
-    private short new_Userid;
-    private short update_Ncss;
+    private String config_Lock;	
+    private short new_Userid;	
+    private short update_Ncss;	
     private short dont_Advance_Ctx;
     private short max_Resp_Tkn_Lgth;
     private short[] last_Cmd_Timestamp = new short[ 3 ] ;
