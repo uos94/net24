@@ -2,7 +2,6 @@ package kr.co.kcs.demo;
 
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,9 +15,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import kr.co.kcs.core.utils.Day;
 import kr.co.kcs.core.utils.NsjiSender;
-import kr.co.kcs.core.utils.paser.DataArrayMaker;
 import kr.co.kcs.core.utils.paser.ParamInfo;
-import kr.co.kcs.core.utils.paser.VariableProperties;
 import kr.co.kcs.core.utils.paser.Xml2Map;
 import kr.co.kcs.oncf.cmn.NcpVty;
 

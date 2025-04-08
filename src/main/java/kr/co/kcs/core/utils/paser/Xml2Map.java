@@ -149,64 +149,6 @@ public class Xml2Map {
     	
 	}
     
-//    private void getParamList(Element classElement, int classLevel, int offset, int elementSize) {
-//    	
-//    	int paramLevel = classLevel + 1; 
-//    	int remainSize = elementSize;
-//    	
-//        ArrayList<VariableProperties> paramList = new ArrayList<VariableProperties>();
-//        
-//        NodeList attributeList = classElement.getElementsByTagName("AttributeElement");
-//            
-//        String classKey = "";
-//        
-//        for (int j = 0; j < attributeList.getLength(); j++) {
-//            
-//        	Element attributeElement = (Element) attributeList.item(j);
-//            
-//            VariableProperties properties = new VariableProperties(attributeElement);
-//            
-//            if(elementSize == 0) {
-//            	elementSize = Integer.parseInt(properties.elementSize);
-//            	remainSize = elementSize;
-//            }
-//            
-//            int currentOffset 		= Integer.parseInt(properties.offset);
-//    		int currentElementSize 	= Integer.parseInt(properties.elementSize);
-//    		int currentLevel 		= Integer.parseInt(properties.level);
-//            
-//    		if(currentOffset < offset) continue;
-//    		
-//            if(currentLevel == classLevel && properties.isClassVariable()) {
-//            	classKey = getParamName(attributeElement);
-//            	if(classKey.equals("ncp-req-add-dev")) {
-//            		System.out.println("classKey: ncp-req-add-dev");
-//            	}
-//            }
-//            
-//            if(currentLevel == paramLevel) {            	
-//            	if(properties.isClassVariable()) {
-//            		if(properties.qualName.equals("item")) {
-//            			System.out.println("item찾음.");	
-//            		}
-//            		getParamList(classElement, currentLevel, currentOffset, currentElementSize);
-//            	}
-//            	else {
-//            		remainSize = remainSize - currentElementSize;	
-//            	}
-//            		
-//            	paramList.add(properties);
-//            	
-//            	if(remainSize <= 0) {
-//            		System.out.println("remainSize = 0");
-//            		break;
-//        		}
-//            }
-//        }
-//        mapParseXml.put(classKey, paramList);
-//	}
-
-
 	private String getFirstClassName(Element classElement) {
         NodeList attributeList = classElement.getElementsByTagName("AttributeElement");
         if (attributeList.getLength() > 0) {
